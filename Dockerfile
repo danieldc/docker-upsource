@@ -18,6 +18,7 @@ RUN         cd /opt/ \
             && rm upsource-2.0.3554.zip
 
 COPY        configure.sh /opt/Upsource/
+RUN         chmod +x /opt/Upsource/configure.sh
 
 EXPOSE 8080
 CMD []
