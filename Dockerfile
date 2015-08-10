@@ -1,15 +1,9 @@
-FROM        ubuntu:14.04
+FROM        frapontillo/java:8
 MAINTAINER  Francesco Pontillo <francescopontillo@gmail.com>
 
 RUN         apt-get update -y && apt-get install -y \
-            software-properties-common \
             unzip \
             wget
-RUN         echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | /usr/bin/debconf-set-selections
-RUN         add-apt-repository ppa:webupd8team/java -y \
-            && apt-get update -y && apt-get install -y \
-            oracle-java8-installer \
-            oracle-java8-set-default
 RUN         printf '%s\n%s\n%s\n%s\n' \
             '* - memlock unlimited' \
             '* - nofile 100000' \
@@ -22,7 +16,17 @@ RUN         cd /opt/ \
             && unzip upsource-2.0.3554.zip \
             && chmod -R a+rwX /opt/Upsource \
             && rm upsource-2.0.3554.zip
-RUN         chmod +x /opt/Upsource/bin/upsource.sh
+
+ENV         UPSOURCE_LOGS_DIR /opt/Upsource/logs
+ENV         UPSOURCE_TEMP_DIR /opt/Upsource/temp
+ENV         UPSOURCE_DATA_DIR /opt/Upsource/data
+ENV         UPSOURCE_BACKUPS_DIR /opt/Upsource/backups
+
+RUN         /opt/Upsource/bin/upsource.sh configure \
+            --logs-dir=$UPSOURCE_LOGS_DIR \
+            --temp-dir=$UPSOURCE_TEMP_DIR \
+            --data-dir=$UPSOURCE_DATA_DIR \
+            --backups-dir=$UPSOURCE_BACKUP_DIR
 
 EXPOSE 8080
 CMD []
