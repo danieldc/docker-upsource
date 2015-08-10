@@ -17,16 +17,7 @@ RUN         cd /opt/ \
             && chmod -R a+rwX /opt/Upsource \
             && rm upsource-2.0.3554.zip
 
-ENV         UPSOURCE_LOGS_DIR /opt/Upsource/logs
-ENV         UPSOURCE_TEMP_DIR /opt/Upsource/temp
-ENV         UPSOURCE_DATA_DIR /opt/Upsource/data
-ENV         UPSOURCE_BACKUPS_DIR /opt/Upsource/backups
-
-RUN         /opt/Upsource/bin/upsource.sh configure \
-            --logs-dir=$UPSOURCE_LOGS_DIR \
-            --temp-dir=$UPSOURCE_TEMP_DIR \
-            --data-dir=$UPSOURCE_DATA_DIR \
-            --backups-dir=$UPSOURCE_BACKUPS_DIR
+COPY        configure.sh /opt/Upsource/
 
 EXPOSE 8080
 CMD []
