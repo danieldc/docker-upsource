@@ -1,4 +1,4 @@
-FROM        frapontillo/java:8
+FROM        frapontillo/java:7
 MAINTAINER  Francesco Pontillo <francescopontillo@gmail.com>
 
 RUN         apt-get update -y && apt-get install -y \
