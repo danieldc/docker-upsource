@@ -1,7 +1,7 @@
 FROM        frapontillo/upsource:latest
 MAINTAINER  Francesco Pontillo <francescopontillo@gmail.com>
 
-ENV 		UPSOURCE_BASE_URL http://your-service-ip/
+ENV         UPSOURCE_BASE_URL http://your-service-ip/
 ENV         UPSOURCE_LOGS_DIR /var/upsource/logs
 ENV         UPSOURCE_TEMP_DIR /var/upsource/temp
 ENV         UPSOURCE_DATA_DIR /var/upsource/data
