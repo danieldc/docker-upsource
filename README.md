@@ -57,7 +57,7 @@ Build and run your image: your Upsource instance will then be running on the por
 ```
 
 [docker-url]: https://hub.docker.com/r/frapontillo/upsource
-[docker-image]: https://img.shields.io/docker/pulls/frapontillo/upsource?style=flat
+[docker-image]: https://img.shields.io/docker/pulls/frapontillo/upsource.svg?style=flat
 
 [license-image]: http://img.shields.io/badge/license-Apache_2.0-blue.svg?style=flat
 [license-url]: LICENSE
