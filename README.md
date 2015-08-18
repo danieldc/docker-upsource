@@ -36,8 +36,6 @@ RUN     /opt/Upsource/configure.sh
 
 Build and run your image: your Upsource instance will then be running on the port 8080 in the docker container.
 
-See the [google-cloud](google-cloud/) directory to know how to extend the image and run the container on the Google Cloud platform.
-
 ## License
 
 [JetBrains Upsource](https://www.jetbrains.com/upsource) and [Oracle Java 8](https://www.java.com) are referenced in the Docker container, but are subject to their own licenses.
